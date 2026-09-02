@@ -9,6 +9,34 @@ A simple REST API built with Node.js, TypeScript, and Express.js for validating 
 - Express.js
 - Vitest
 
+## Live API
+
+The API is deployed and available at:
+
+**Base URL:** `https://card-validator-api-xeb2.onrender.com`
+
+### Validate Card Number
+
+**POST** `https://card-validator-api-xeb2.onrender.com/api/cards/validate`
+
+Example request:
+
+```json
+{
+  "cardNumber": "4532015112830366"
+}
+```
+
+Example response:
+
+```json
+{
+  "valid": true
+}
+```
+
+The endpoint accepts a card number and returns whether it passes the validation checks.
+
 ## Getting Started
 
 ### Prerequisites
