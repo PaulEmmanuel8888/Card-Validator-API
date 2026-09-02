@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { isValidCardNumber } from "./validator.js";
 
 const router = Router();
 router.get("/", (req: Request, res: Response) => {
@@ -27,8 +28,10 @@ router.post("/api/cards/validate", (req: Request, res: Response) => {
     });
   }
 
-  return res.json({
-    message: `Card received: ${cardNumber}`,
+  const valid = isValidCardNumber(cardNumber);
+
+  return res.status(200).json({
+    valid,
   });
 });
 
